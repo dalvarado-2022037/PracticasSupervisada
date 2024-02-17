@@ -1,0 +1,185 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "User",
+    "dateExported": "2024-02-17T15:48:34.447Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "07fd3db6-4bfe-47c6-ba51-66957907bf4f",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "login",
+            "url": "localhost:3200/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-17T04:29:49.061Z",
+            "modified": "2024-02-17T15:12:26.053Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "dalvarado"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "1e3bfff6-1613-41f7-a306-447b1cc07ca6",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "testUser",
+            "url": "localhost:3200/testUser",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-17T04:30:08.191Z",
+            "modified": "2024-02-17T05:25:47.155Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQwMzk2Y2RkNjAwNzJjOGI3ZTEwYjUiLCJ1c2VybmFtZSI6ImRhbHZhcmFkbyIsIm5hbWUiOiJEb3VnbGFzIiwicm9sZSI6IlRFQUNIRVJfUk9MRSIsImlhdCI6MTcwODE0NzQzMSwiZXhwIjoxNzA4MTUxMDMxfQ.fawEt4wovHBgzO5Cujw3vFlzhjHXO3EWXXth8-M1TPc"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "06639c73-a0f7-489e-be48-fe7ef1643ea8",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "registrer",
+            "url": "localhost:3200/registrer",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-17T04:42:35.638Z",
+            "modified": "2024-02-17T15:45:18.593Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Juanes"
+                    },
+                    {
+                        "name": "username",
+                        "value": "juanes¿"
+                    },
+                    {
+                        "name": "gmail",
+                        "value": "asdas"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3c6195e9-b928-4b86-8866-958698cf34c9",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "update",
+            "url": "localhost:3200/updateUser/65d0b3e865cc2056bb35fe61",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-17T05:43:23.409Z",
+            "modified": "2024-02-17T15:01:36.680Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Juan"
+                    },
+                    {
+                        "name": "gmail",
+                        "value": "Juan@"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "012faaf1-f147-47c8-9b29-365457fe0355",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "deleteUser",
+            "url": "localhost:3200/deleteUser/65d0b3e865cc2056bb35fe61",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-17T06:01:03.728Z",
+            "modified": "2024-02-17T14:53:13.591Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3392ba18-a4e4-421b-bf68-4a8e96bc55cc",
+            "colId": "8b21609d-90ea-4c9f-9d7c-7512c9834e67",
+            "containerId": "",
+            "name": "registrerAdmin",
+            "url": "localhost:3200/registrerAdmin",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-02-17T15:44:57.714Z",
+            "modified": "2024-02-17T15:44:57.714Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Frank"
+                    },
+                    {
+                        "name": "username",
+                        "value": "Paco"
+                    },
+                    {
+                        "name": "gmail",
+                        "value": "frank@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
