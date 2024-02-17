@@ -4,4 +4,4 @@ import { teacher } from './src/User/User.controller.js'
 
 initServer()
 connect()
-//teacher()
+teacher()
