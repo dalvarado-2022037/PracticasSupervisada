@@ -8,16 +8,19 @@ export const testUser = (req,res)=>{
 
 export const teacher = async(req, res)=>{
     try{
-        let data = {
-            name: 'Douglas',
-            username: 'dalvarado',
-            gmail: 'dalvarado@gmail.com',
-            password: '12345678',
-            role: 'TEACHER_ROLE',
-        }
+        let existe = await User.findOne({username:'dalvarado'})
+        if(!existe){
+            let data = {
+                name: 'Douglas',
+                username: 'dalvarado',
+                gmail: 'dalvarado@gmail.com',
+                password: '12345678',
+                role: 'TEACHER_ROLE',
+            }
         data.password = await encrypt(data.password)
         let user = new User(data)
             await user.save()
+        }
     }catch(err){
         console.error(err)
         return res.status(500).send({message: 'Error course could not be added',err})
