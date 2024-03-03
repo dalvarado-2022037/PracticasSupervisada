@@ -1,6 +1,5 @@
 
 import Curso from './Curso.model.js'
-import User from '../User/User.model.js'
 
 export const testCuso = (req,res)=>{
     return res.send('Conecto con Cursos')
@@ -8,8 +7,15 @@ export const testCuso = (req,res)=>{
 
 export const addCurso = async(req, res)=>{
     try{
+        let { uid } = req.user
         let data = req.body
         let { role } = req.user
+        
+        if(role == 'STUDENT_ROLE') 
+            return res.status(401).send({message: 'You do not have authorization'})
+        if(data.teacher != uid) 
+            return res.status(401).send({message: 'You do not have authorization'})
+
         let curso = new Curso(data)
         await curso.save()
         return res.send({message: 'Course successfully added'})
@@ -22,12 +28,14 @@ export const addCurso = async(req, res)=>{
 export const lookForAllCursos = async(req, res)=>{
     try{
         let { uid, role } = req.user
-        if(role == 'TEACHER_ROLE'){
-            let allT = await Curso.find({teacher:uid})
-            return res.send({message: allT})
-        }
-        let allE = await Curso.find({students:uid})
-        return res.send({message: allE})
+        let curs
+
+        if(role == 'TEACHER_ROLE')
+            curs = await Curso.find({teacher: uid})
+        else if(role == 'STUDENT_ROLE')
+            curs = await Curso.find({students: uid})
+
+        return res.send({message: curs})
     }catch(err){
         console.error(err)
         return res.status(404).send({message: 'Error when searching'})
